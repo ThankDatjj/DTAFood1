@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTAFood - Đăng nhập / Đăng ký</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <!-- Header nhỏ gọn -->
+    <header class="auth-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">DTAFood</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- FORM ĐĂNG NHẬP / ĐĂNG KÝ -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Đăng nhập</button>
+                    <button class="tab-btn" data-tab="register">Đăng ký</button>
+                </div>
+
+                <!-- Form Login -->
+                <form id="loginForm" class="auth-form active">
+                    <h2>Đăng nhập vào DTAFood</h2>
+                    <p>Tiếp tục đặt món ngon ngay hôm nay!</p>
+
+                    <div class="form-group">
+                        <label for="loginPhone">Số điện thoại</label>
+                        <input type="tel" id="loginPhone" placeholder="Nhập số điện thoại" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label><input type="checkbox" checked> Ghi nhớ đăng nhập</label>
+                        <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width">Đăng nhập</button>
+
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập bằng</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                            <button type="button" class="social-btn google"><i class="fab fa-google"></i></button>
+                            <button type="button" class="social-btn zalo">
+                                <img src="https://img.icons8.com/color/48/zalo.png" alt="Zalo" width="20">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Form Register -->
+                <form id="registerForm" class="auth-form">
+                    <h2>Tạo tài khoản DTAFood</h2>
+                    <p>Nhận ngay ưu đãi cho thành viên mới!</p>
+
+                    <div class="form-group">
+                        <label for="regName">Họ và tên</label>
+                        <input type="text" id="regName" placeholder="Nhập họ và tên" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPhone">Số điện thoại</label>
+                        <input type="tel" id="regPhone" placeholder="Nhập số điện thoại" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Email (tùy chọn)</label>
+                        <input type="email" id="regEmail" placeholder="Nhập email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Mật khẩu</label>
+                        <input type="password" id="regPassword" placeholder="Tạo mật khẩu (ít nhất 6 ký tự)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Xác nhận mật khẩu</label>
+                        <input type="password" id="regConfirmPassword" placeholder="Nhập lại mật khẩu" required>
+                    </div>
+
+                    <div class="form-agree">
+                        <label><input type="checkbox" required> Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a></label>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width">Đăng ký</button>
+                </form>
+            </div>
+
+            <!-- Nền ảnh bên phải (giống Grab) -->
+            <div class="auth-bg">
+                <img src="https://kenh14cdn.com/2020/9/29/pho-ga-16013173883441844464583.jpg" alt="Món ăn ngon">
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/auth-script.js"></script>
+</body>
+</html>

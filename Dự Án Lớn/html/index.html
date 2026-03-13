@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTAFood - Thèm món gì - Đặt ngay món đó!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Font Awesome – bắt buộc để icon không bị lạ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- NAVBAR (giữ nguyên) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">DTAFood</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/html/index.html">Trang chủ</a></li>
+                <li><a href="/html/menu.html">Thực đơn</a></li>
+                <li><a href="/html/partner.html">Đối tác</a></li>
+                <li><a href="/html/support.html">Trung tâm hỗ trợ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#" class="btn-partner">Trở thành Đối tác</a>
+                <button class="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (giữ nguyên) -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">DTAFood</h1>
+                <p class="hero-subtitle">Thèm món gì - Đặt ngay món đó!</p>
+                <button onclick="document.getElementById('choice-section').scrollIntoView({behavior:'smooth'})" 
+                        class="btn-primary btn-large">Đặt hàng ngay</button>
+            </div>
+
+            <!-- Card Đối tác (giữ nguyên) -->
+            <div class="partner-card">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN CHỌN (giữ nguyên) -->
+    <section id="choice-section" class="choice-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #11cabb;">Bạn là ai hôm nay?</h2>
+            <div class="choice-grid">
+                <div class="choice-card buyer">
+                    <div class="icon-circle"><i class="fas fa-motorcycle"></i></div>
+                    <h3>Người Mua</h3>
+                    <p>Đặt đồ ăn ngon, giao siêu tốc</p>
+                    <a href="buyer-login.html" class="btn-primary">Vào trang Người Mua</a>
+                </div>
+                <div class="choice-card seller">
+                    <div class="icon-circle"><i class="fas fa-store"></i></div>
+                    <h3>Người Bán</h3>
+                    <p>Đăng ký quán ăn & tăng doanh thu</p>
+                    <a href="seller-login.html" class="btn-primary">Vào trang Người Bán</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- PHẦN GIỚI THIỆU THƯƠNG HIỆU & LỢI ÍCH (đã cải tiến, bổ sung thông tin chi tiết) -->
+<section class="about-section">
+    <div class="container">
+        <h2 class="section-title" style="color: #11cabb;">Vì sao chọn DTAFood?</h2>
+        <p class="about-desc">DTAFood là nền tảng giao đồ ăn trực tuyến hàng đầu tại Việt Nam, được xây dựng với sứ mệnh mang đến những bữa ăn ngon, nóng hổi và tiện lợi đến mọi nhà. Ra đời từ năm 2024 tại Hải Phòng, chúng tôi nhanh chóng mở rộng đến Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, Cần Thơ và nhiều tỉnh thành khác. Với hơn <strong>5.000 nhà hàng đối tác</strong> và hàng trăm nghìn đơn hàng mỗi ngày, DTAFood cam kết mang đến trải nghiệm đặt món ăn tốt nhất cho khách hàng.</p>
+        
+        <ul class="benefits-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Giao hàng thần tốc</strong> – Chỉ từ 15-30 phút, đảm bảo món ăn vẫn nóng hổi như vừa ra lò. Hệ thống tài xế phủ sóng rộng khắp các quận huyện.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Đa dạng lựa chọn</strong> – Hàng nghìn món ăn từ Việt Nam (phở, bún chả, cơm tấm, lẩu), Hàn Quốc (kimchi, bibimbap), Nhật Bản (sushi, ramen), Âu Mỹ (pizza, burger) đến đồ ăn vặt đường phố.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Giá cả minh bạch</strong> – Không phí ẩn, hiển thị rõ ràng giá món + phí vận chuyển theo khoảng cách thực tế. Luôn có ưu đãi cho người dùng mới và thành viên thân thiết.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Thanh toán linh hoạt</strong> – Tiền mặt, ví điện tử (Momo, ZaloPay, VNPAY), thẻ ngân hàng, trả sau (Kredivo, Fundiin), quét mã QR.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>An toàn & tiện lợi</strong> – Theo dõi đơn hàng realtime, liên hệ tài xế dễ dàng, đảm bảo vệ sinh an toàn thực phẩm từ đối tác được kiểm duyệt nghiêm ngặt.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Khuyến mãi hấp dẫn</strong> – Miễn phí giao hàng cho đơn từ 99k, giảm 30-50% cho món ăn yêu thích, mã voucher hàng ngày, hoàn tiền nếu không hài lòng.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Hỗ trợ 24/7</strong> – Đội ngũ chăm sóc khách hàng luôn sẵn sàng hỗ trợ qua chat, hotline, Zalo OA khi bạn cần giúp đỡ bất cứ lúc nào.</li>
+        </ul>
+
+        <!-- Thêm phần số liệu ấn tượng để trang đỡ trống -->
+        <div class="stats-highlights">
+            <div class="stat-item">
+                <h4>5.000+</h4>
+                <p>Nhà hàng đối tác</p>
+            </div>
+            <div class="stat-item">
+                <h4>500.000+</h4>
+                <p>Đơn hàng mỗi tháng</p>
+            </div>
+            <div class="stat-item">
+                <h4>15+</h4>
+                <p>Tỉnh thành phủ sóng</p>
+            </div>
+            <div class="stat-item">
+                <h4>4.8★</h4>
+                <p>Đánh giá trung bình</p>
+            </div>
+        </div>
+
+        <!-- Câu kết thúc hấp dẫn -->
+        <p class="about-closing" style="margin-top: 40px; font-size: 1.15rem; text-align: center; color: #555;">
+            <strong>DTAFood – Không chỉ giao đồ ăn, mà còn giao niềm vui và sự tiện lợi đến từng bữa ăn của bạn!</strong>
+        </p>
+    </div>
+</section>
+
+
+    <section class="how-to-section">
+        <div class="container">
+            <h2 class="section-title">Đặt hàng chỉ với vài bước đơn giản</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Mở ứng dụng hoặc website DTAFood</h3>
+                    <p>Chọn "Giao đồ ăn" và điền địa chỉ giao hàng của bạn.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Chọn nhà hàng & món ăn</h3>
+                    <p>Duyệt qua hàng nghìn món ngon, lọc theo loại món, đánh giá hoặc khuyến mãi.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Thêm ghi chú & thanh toán</h3>
+                    <p>Nhập ghi chú đặc biệt, áp dụng mã khuyến mãi và chọn phương thức thanh toán.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Theo dõi & thưởng thức</h3>
+                    <p>Theo dõi tài xế realtime và tận hưởng bữa ăn nóng hổi ngay tại nhà!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO (giữ nguyên, nhưng có thể chỉnh nếu cần) -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="intro-title">Mang đến cho bạn món ăn ưa thích, nóng hổi và ngon lành</h2>
+            <p class="intro-desc">Đặt đồ ăn giao hàng tận nhà nhanh chóng, lấp đầy chiếc bụng đói của bạn với những món ngon yêu thích và dịch vụ giao hàng “thần tốc”. DTAFood hiện đang có mặt tại nhiều tỉnh thành ở Việt Nam.</p>
+        </div>
+    </section>
+
+     <!-- FOOTER ĐẦY ĐỦ -->
+    <footer class="main-footer">
+        <div class="container">
+        <h2 class="section-title">Liên hệ & Hỗ trợ 24/7</h2>
+        
+        <div class="contact-grid">
+            <!-- Hotline -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-volume"></i>
+                </div>
+                <h4>Hotline</h4>
+                <p class="contact-value">
+                    <a href="tel:1900636636">1900 636 636</a>
+                </p>
+                <span class="contact-label">Gọi ngay để được hỗ trợ</span>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4>Email</h4>
+                <p class="contact-value">
+                    <a href="mailto:support@dtafood.vn">support@dtafood.vn</a>
+                </p>
+                <span class="contact-label">Phản hồi trong 24h</span>
+            </div>
+
+            <!-- Zalo OA -->
+            <div class="contact-item">
+                <div class="contact-icon zalo-icon">
+                    <!-- Dùng hình ảnh thay vì font icon vì FA không có Zalo -->
+                    <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" width="48" height="48">
+                </div>
+                <h4>Zalo OA</h4>
+                <p class="contact-value">
+                    <a href="https://zalo.me/..." target="_blank">DTAFood Official</a>
+                </p>
+                <span class="contact-label">Chat trực tiếp nhanh chóng</span>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="footer-grid" style="padding-top: 30px;">
+                <div style="color: rgb(255, 255, 255);">
+                    <h3>DTAFood</h3>
+                    <p>Nền tảng giao đồ ăn nhanh nhất Việt Nam</p>
+                </div>
+                <div>
+                    <h4>Về chúng tôi</h4>
+                    <a href="#">Giới thiệu</a><br>
+                    <a href="#">Blog</a><br>
+                    <a href="#">Tuyển dụng</a>
+                </div>
+                <div>
+                    <h4>Dành cho đối tác</h4>
+                    <a href="#">Trở thành nhà hàng</a><br>
+                    <a href="#">Trở thành tài xế</a>
+                </div>
+                <div>
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a><br>
+                    <a href="#">Chính sách hoàn tiền</a><br>
+                    <a href="#">Điều khoản sử dụng</a>
+                </div>
+                <div>
+                    <h4>Theo dõi chúng tôi</h4>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a><br>
+                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 DTAFood - Dự án trang web bán hàng DTA| All rights reserved</p>
+                <p>Giấy phép kinh doanh: 0101234567 do Sở Kế hoạch & Đầu tư Hà Nội cấp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
