@@ -1,0 +1,161 @@
+1. Trang web cho người dùng chọn mục Người Bán/Người Mua
+2. Trang web riêng dành cho admin quản lý người dùng
+3. Trang login/register dành cho người bán/người mua
+4. Trang login dành cho admin
+
+Người Mua
+Trang web giới thiệu về thương hiệu riêng
+1. bannner giới thiệu về thương hiệu
+2. tại sao nên chọn thương hiệu để đặt đồ ăn
+3. sẽ có phần dẫn đến trang của người mua, người bán riêng và khi ấn vào mới cho người dùng chọn mục login và register
+4. sau khi mua xong yêu cầu người dùng để lại thông tin liên hệ rồi mới được phép feedback
+5. mục nếu bom hàng quá 3 lần sẽ bị khóa acc
+6. mục thanh toán sẽ có thanh toán trực tiếp và tài khoản
+7. Phân loại rõ ràng: Khai vị, món chính, đồ uống, tráng miệng...
+8. Bộ lọc thông minh: Lọc theo giá
+9 Tùy chọn món (Customization): Cho phép khách chọn mức độ cay, thêm topping, hoặc ghi chú đặc biệt cho đầu bếp
+10. Trạng thái đơn hàng: Thông báo cho khách biết: "Đang chế biến", "Đang giao hàng", "Đã hoàn thành".
+11. Tích điểm đổi quà: Giữ chân khách hàng trung thành bằng cách tích điểm sau mỗi đơn hàng.
+
+1. Banner quảng bá những voucher và những món ăn đang hot
+2. giỏ hàng ở góc phải màn hình
+3. có 1 thương hiệu riêng DTAFoood
+4. bảng xếp hạng món ăn được mua nhiều nhất
+5. mục đăng ký gói DTA Vip cho người dùng
+6. Mục giới thiệu về đồ ăn ví dụ như bánh mì, mì ý sau khi người dùng ấn vào sẽ hiện ra những quán ăn bán sản phẩm đó
+7. đánh giá chất lượng của những món ăn ở dưới sản phẩm
+8. mục tại sao nên chọn DTAFood
+
+
+Người bán hàng
+1. trang chủ vẫn hiển thị mục đăng ký chính và sẽ có phần login riêng dành cho người dùng
+2. sau khi đăng ký và đăng nhập xon
+
+
+trang web dành cho người bán
+1.đăng tải món ăn muốn bán (giới thiệu về những món ăn, nguồn cung cấp nguyên liệu thực phẩm)
+2. xem đánh giá feedback của người dùng về những món ăn, số lượng bán ra được trong ngày/tháng
+3. người bán có thể thấy được thông tin liên hệ của người feedback để liên hệ khách hàng
+1. Bảng Điều Khiển Tổng Quan (Dashboard)
+Đây là "trung tâm chỉ huy" giúp người bán nắm bắt tình hình kinh doanh ngay lập tức:
+
+Biểu đồ doanh thu: Theo ngày, tuần, tháng.
+
+Số lượng đơn hàng: Đơn mới, đơn đang giao, đơn đã hoàn thành.
+
+Thông báo: Tin nhắn từ khách hàng hoặc thông báo hệ thống (nhắc hết hạn khuyến mãi, nhắc đơn hàng chờ quá lâu).
+
+2. Quản Lý Thực Đơn (Menu Management)
+Công cụ quan trọng nhất để người bán tự đưa sản phẩm lên sàn:
+
+Thêm món mới: Tên món, giá gốc, giá khuyến mãi.
+
+Tùy chỉnh phân loại: Tạo các danh mục (ví dụ: Món lẩu, Món nướng).
+
+Tùy chọn biến thể: Quản lý size (S/M/L), các loại topping, mức độ đường/đá.
+
+Bật/Tắt trạng thái: Nút gạt nhanh để tắt món khi "Hết hàng" (Tránh việc khách đặt rồi mới biết hết món).
+
+3. Quản Lý Đơn Hàng (Order Processing)
+Giao diện để xử lý quy trình từ lúc khách đặt đến khi giao xong:
+
+Bộ lọc trạng thái: Đơn mới -> Đang chuẩn bị -> Đang giao -> Thành công/Hủy.
+
+In hóa đơn: Kết nối với máy in nhiệt để in đơn cho nhà bếp.
+
+Lịch sử đơn hàng: Tra cứu lại các đơn cũ để xử lý khiếu nại nếu có.
+
+4. Quản Lý Tài Chính & Rút Tiền (Finance & Payout)
+Người bán cực kỳ quan tâm đến dòng tiền của họ:
+
+Ví tiền: Số dư hiện có sau khi trừ phí hoa hồng của sàn.
+
+Lịch sử giao dịch: Chi tiết từng khoản thu/chi.
+
+Yêu cầu rút tiền: Liên kết tài khoản ngân hàng và thực hiện lệnh rút tiền về túi.
+
+5. Marketing & Khuyến Mãi (Marketing Tools)
+Cho phép người bán tự chạy các chiến dịch để tăng doanh số:
+
+Tạo mã giảm giá: Ví dụ "GIAM20K cho đơn từ 100K".
+
+Flash Sale: Đăng ký tham gia các khung giờ vàng của sàn.
+
+Quảng cáo gian hàng: Đấu thầu để quán hiện lên đầu trang tìm kiếm.
+
+6. Báo Cáo & Phân Tích (Analytics)
+Giúp người bán hiểu khách hàng hơn:
+
+Món ăn được yêu thích nhất: Để họ biết nên nhập thêm nguyên liệu gì.
+
+Khung giờ cao điểm: Để chủ quán sắp xếp thêm nhân sự làm việc.
+
+Đánh giá từ khách: Phản hồi của khách để chủ quán cải thiện chất lượng dịch vụ.
+
+7. Cấu Hình Gian Hàng (Store Profile)
+Thông tin cơ bản: Tên quán, Logo, ảnh bìa, địa chỉ.
+
+Giờ đóng/mở cửa: Có thể cài đặt đóng cửa tự động hoặc tạm nghỉ lễ.
+
+Phạm vi giao hàng: Thiết lập khoảng cách tối đa mà quán có thể giao.
+
+
+ADMIN
+1. Quản Lý Người Dùng (User Management)
+Đây là nơi bạn kiểm soát "nhân khẩu học" của hệ thống.
+
+Danh sách Người mua: Tên, số điện thoại, lịch sử mua hàng, tổng chi tiêu (để biết ai là khách hàng VIP).
+
+Danh sách Người bán (Vendors): * Trạng thái hoạt động (Đang mở cửa/Đã bị khóa).
+
+Hồ sơ pháp lý: Ảnh căn cước, giấy phép kinh doanh (để duyệt người bán mới).
+
+Đánh giá tín nhiệm (Rating).
+
+Phân quyền Admin: Nếu bạn có nhân viên, bạn cần chia quyền (ví dụ: Nhân viên trực chat, Nhân viên kế toán, Admin tổng).
+
+2. Kiểm Duyệt Nội Dung (Moderation Center)
+Để đảm bảo chất lượng đồ ăn và hình ảnh trên sàn:
+
+Duyệt món ăn mới: Khi người bán đăng món, bạn cần kiểm duyệt hình ảnh/mô tả trước khi cho hiển thị công khai.
+
+
+Kiểm soát Đánh giá (Review Management): Theo dõi các bình luận tiêu cực hoặc báo cáo vi phạm từ người mua để xử lý người bán làm ăn kém chất lượng.
+
+3. Điều Phối Đơn Hàng & Giao Vận (Order & Logistics)
+Nơi bạn theo dõi "dòng chảy" của hàng hóa:
+
+Bảng điều khiển Real-time: Xem có bao nhiêu đơn đang được chuẩn bị, bao nhiêu đơn đang giao.
+
+Xử lý tranh chấp: Nếu người mua khiếu nại (đồ ăn hỏng, giao thiếu), Admin sẽ vào cuộc để quyết định hoàn tiền cho ai.
+
+4. Quản Lý Tài Chính & Đối Soát (Finance & Payout)
+Đây là phần phức tạp nhất nhưng quan trọng nhất:
+
+Cấu hình hoa hồng (Commission): Cài đặt mức phí bạn thu của người bán (ví dụ: 15% mỗi đơn hàng).
+
+Đối soát người bán: Tổng kết doanh thu mỗi tuần/tháng để chuyển tiền cho chủ quán sau khi trừ phí.
+
+Quản lý khuyến mãi toàn sàn: Tạo các mã giảm giá áp dụng được cho tất cả các quán (ví dụ: "FREESHIP_ALL").
+
+5. Báo Cáo & Phân Tích (Analytics & Insights)
+Giúp bạn đưa ra quyết định kinh doanh:
+
+Tỉ lệ hủy đơn: Tìm hiểu lý do tại sao khách hủy (do quán làm chậm hay do shipper).
+
+Tăng trưởng: Biểu đồ so sánh doanh thu kỳ này so với kỳ trước.
+
+6. Hệ Thống Thông Báo (Notification System)
+Gửi thông báo đẩy (Push notification) hoặc Email/SMS cho người bán về chính sách mới.
+
+Gửi tin nhắn quảng cáo cho người mua về các chương trình giảm giá.
+
+1. thanh tìm kiếm dành cho trang web mua hàng
+2. mô tả những nội dung dành cho trang web mua hàng
+3. về bộ lọc tìm kiếm của trang web mua hàng 
+4. chuyển hướng cho các nhà đối tác trong trang web giới thiẹu 
+5. thêm những phần giới thiệu cho người dùng để người dùng hiểu biết hơn về trang web
+6. thêm những phần sale cho các món ăn vào cuối ngày 
+7. theo dõi đơn hàng dành cho người dùng
+8. thanh toán đơn hàng
+9. đánh giá món ăn 

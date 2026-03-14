@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTAFood - Đặt món ngon ngay!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo bên trái -->
+        <div class="logo">
+            <span class="logo-text" style="font-size: 220%;">DTAFood</span>
+        </div>
+
+        <!-- Thanh tìm kiếm ở giữa -->
+        <div class="search-bar">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon" id="searchIcon"></i>
+                <input type="text" id="searchInput" placeholder="Tìm món ngon, quán quen..." autocomplete="off">
+                <button type="submit" class="search-submit-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <!-- Kết quả tìm kiếm -->
+            <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <!-- Phần bên phải: location + cart + auth -->
+        <div class="nav-right">
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Hà Nội • Giao trong 25 phút</span>
+            </div>
+            <button id="openCartBtn"  id="cartBtn" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount" class="cart-count">0</span>
+            </button>
+            <div class="user-menu">
+                <div class="auth-link" id="authLink">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="auth-text" id="authText">Đăng nhập / Đăng ký</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="user-dropdown" id="userDropdown">
+                    <button id="logoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- HERO BANNER giống GrabFood - thêm ngay sau navbar -->
+<section class="hero-banner">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1>Chào buổi sáng</h1>
+            <p>Hôm nay bạn muốn giao đồ ăn đến đâu?</p>
+            <div class="location-input">
+                <i class="fas fa-map-marker-alt location-icon"></i>
+                <input type="text" placeholder="Nhập địa chỉ giao hàng... (ví dụ: 123 Lê Lợi, Hải Phòng)">
+                <button class="search-btn">Tìm kiếm</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- BANNER VOUCHER & HOT DEALS -->
+    <section class="promo-banner">
+        <div class="promo-slide active">
+            <h2>Giảm ngay 50k cho đơn đầu tiên!</h2>
+            <p>Dùng mã <strong>FIRST50</strong> • Áp dụng cho tất cả quán</p>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-list" id="categoryList">
+                <!-- JS sẽ render -->
+            </div>
+        </div>
+    </section>
+
+    <!-- TRENDING / BẢNG XẾP HẠNG MÓN HOT -->
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="section-title">Món ăn hot tuần này 🔥</h2>
+            <div class="dish-grid" id="trendingGrid">
+                <!-- JS render -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL DISHES + FILTER -->
+    <section class="dishes-section">
+        <div class="container">
+            <div class="dish-grid" id="dishGrid">
+                <!-- JS render tất cả món -->
+            </div>
+        </div>
+    </section>
+    <div class="see-more-container">
+    <a href="/html/more-dishes.html" class="see-more-btn"><i class="fas fa-arrow-right"></i> Hiển thị thêm món ngon & khuyến mãi</a>
+</div>
+
+    <!-- DTA VIP BANNER -->
+    <section class="vip-banner">
+        <div class="container">
+            <h2>Trở thành <span class="highlight">DTA VIP</span> – Tiết kiệm đến 30% mỗi tuần!</h2>
+            <p>Phí chỉ 49k/tháng • Miễn phí giao • Ưu đãi độc quyền</p><br>
+            <button class="btn-primary">Đăng ký DTA VIP ngay</button>
+        </div>
+    </section>
+    <!-- PHẦN MỚI: MÓN NGON CHO MỌI NHÀ (giống GrabFood "There's something for everyone!") -->
+<section class="cuisine-section">
+    <div class="container">
+        <h2 class="section-title">Món ngon cho mọi nhà!</h2>
+        <p class="section-subtitle">Chọn loại món yêu thích để khám phá hàng trăm quán ngon gần bạn</p>
+        
+        <div class="cuisine-grid" id="cuisineGrid">
+            <!-- JS sẽ render các loại món -->
+        </div>
+    </div>
+</section>
+
+    <!-- FLOATING CART (góc phải dưới) -->
+    <div   id="floatingCart" class="floating-cart">
+        <button id="floatingCartBtn" id="cartBtn" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            Giỏ hàng (<span id="cartCount">0</span>)
+        </button>
+    </div>
+    
+    <!-- CART SIDEBAR -->
+    <div id="cartSidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+        <h3>Giỏ hàng của bạn</h3>
+        <button id="closeCart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-total">
+        <p>Tổng cộng: <strong id="cartTotal">0đ</strong></p>
+        <button class="btn-primary full-width">Thanh toán</button>
+    </div>
+
+</div>
+
+    <!-- CUSTOMIZATION MODAL -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">✕</span>
+            <h3 id="modalDishName"></h3>
+            <div class="custom-options">
+                <h4>Mức độ cay</h4>
+                <select id="spicyLevel">
+                    <option value="0">Không cay</option>
+                    <option value="1">Ít cay</option>
+                    <option value="2" selected>Trung bình</option>
+                    <option value="3">Siêu cay 🔥</option>
+                </select>
+                <h4>Topping thêm (+10k mỗi món)</h4>
+                <label><input type="checkbox" value="Trân châu"> Trân châu</label>
+                <label><input type="checkbox" value="Phô mai"> Phô mai</label>
+                <label><input type="checkbox" value="Thịt bò"> Thịt bò</label>
+            </div>
+            <textarea id="specialNote" placeholder="Ghi chú cho đầu bếp..."></textarea>
+            <button id="addToCartFromModal" class="btn-primary full-width">Thêm vào giỏ</button>
+        </div>
+    </div>
+    <!-- VỀ DTAFOOD - phiên bản bổ sung nội dung -->
+<section class="about-brand">
+    <div class="container">
+        <h2 class="section-title">Về DTAFood</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>DTAFood là nền tảng giao đồ ăn nhanh hàng đầu tại Việt Nam, được thành lập năm 2024 tại Hải Phòng với sứ mệnh <strong>“Mang món ngon đến mọi nhà chỉ trong 25 phút”</strong>.</p>
+                
+                <p>Hiện nay DTAFood đã có mặt tại <strong>15 tỉnh thành</strong>, hợp tác với hơn <strong>8.500 nhà hàng</strong> và phục vụ hơn <strong>1.200.000 khách hàng</strong> mỗi tháng. Chúng tôi cam kết:</p>
+                
+                <ul class="about-features">
+                    <li><i class="fas fa-check-circle"></i> Đồ ăn nóng hổi – Giao hàng nhanh chóng</li>
+                    <li><i class="fas fa-check-circle"></i> Giá cả minh bạch – Không phí ẩn</li>
+                    <li><i class="fas fa-check-circle"></i> Hỗ trợ 24/7 – Đội ngũ chăm sóc tận tâm</li>
+                    <li><i class="fas fa-check-circle"></i> Đa dạng món ăn – Từ truyền thống đến hiện đại</li>
+                    <li><i class="fas fa-check-circle"></i> Ưu đãi liên tục – Giảm giá, miễn phí giao cho thành viên VIP</li>
+                </ul>
+
+                <p>Với đội ngũ hơn 10.000 tài xế thân thiện và hệ thống công nghệ hiện đại, DTAFood không chỉ là ứng dụng đặt đồ ăn, mà còn là người bạn đồng hành cho mọi bữa ăn hàng ngày của bạn.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Tỉnh thành</p>b
+                </div>
+                <div class="stat-item">
+                    <h3>8.500+</h3>
+                    <p>Nhà hàng đối tác</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1.2 triệu</h3>
+                    <p>Khách hàng/tháng</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25 phút</h3>
+                    <p>Giao hàng trung bình</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8★</h3>
+                    <p>Đánh giá trung bình</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- HỆ THỐNG CƠ SỞ -->
+    <section class="locations-section">
+        <div class="container">
+            <h2 class="section-title">Hệ thống cơ sở DTAFood</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h4>Hà Nội (Trụ sở chính)</h4>
+                    <p>45 Trần Duy Hưng, Cầu Giấy<br>Hotline: 1900 636 636</p>
+                </div>
+                <div class="location-card">
+                    <h4>Hải Phòng</h4>
+                    <p>123 Nguyễn Bỉnh Khiêm, Quận Hồng Bàng<br>Hotline: 1900 636 637</p>
+                </div>
+                <div class="location-card">
+                    <h4>TP. Hồ Chí Minh</h4>
+                    <p>278 Nguyễn Thị Minh Khai, Quận 3<br>Hotline: 1900 636 638</p>
+                </div>
+                <div class="location-card">
+                    <h4>Đà Nẵng</h4>
+                    <p>89 Nguyễn Văn Linh, Quận Hải Châu<br>Hotline: 1900 636 639</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER ĐẦY ĐỦ -->
+    <footer class="main-footer">
+        <div class="container">
+        <h2 class="section-title">Liên hệ & Hỗ trợ 24/7</h2>
+        
+        <div class="contact-grid">
+            <!-- Hotline -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-volume"></i>
+                </div>
+                <h4>Hotline</h4>
+                <p class="contact-value">
+                    <a href="tel:1900636636">1900 636 636</a>
+                </p>
+                <span class="contact-label">Gọi ngay để được hỗ trợ</span>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4>Email</h4>
+                <p class="contact-value">
+                    <a href="mailto:support@dtafood.vn">support@dtafood.vn</a>
+                </p>
+                <span class="contact-label">Phản hồi trong 24h</span>
+            </div>
+
+            <!-- Zalo OA -->
+            <div class="contact-item">
+                <div class="contact-icon zalo-icon">
+                    <!-- Dùng hình ảnh thay vì font icon vì FA không có Zalo -->
+                    <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" width="48" height="48">
+                </div>
+                <h4>Zalo OA</h4>
+                <p class="contact-value">
+                    <a href="https://zalo.me/..." target="_blank">DTAFood Official</a>
+                </p>
+                <span class="contact-label">Chat trực tiếp nhanh chóng</span>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="footer-grid" style="padding-top: 30px;">
+                <div style="color: rgb(255, 255, 255);">
+                    <h3>DTAFood</h3>
+                    <p>Nền tảng giao đồ ăn nhanh nhất Việt Nam</p>
+                </div>
+                <div>
+                    <h4>Về chúng tôi</h4>
+                    <a href="#">Giới thiệu</a><br>
+                    <a href="#">Blog</a><br>
+                    <a href="#">Tuyển dụng</a>
+                </div>
+                <div>
+                    <h4>Dành cho đối tác</h4>
+                    <a href="#">Trở thành nhà hàng</a><br>
+                    <a href="#">Trở thành tài xế</a>
+                </div>
+                <div>
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a><br>
+                    <a href="#">Chính sách hoàn tiền</a><br>
+                    <a href="#">Điều khoản sử dụng</a>
+                </div>
+                <div>
+                    <h4>Theo dõi chúng tôi</h4>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a><br>
+                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 DTAFood - Dự án trang web bán hàng DTA| All rights reserved</p>
+                <p>Giấy phép kinh doanh: 0101234567 do Sở Kế hoạch & Đầu tư Hà Nội cấp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/order-script.js"></script>
+    <!-- Script ẩn icon kính lúp khi nhập text -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const searchWrapper = document.querySelector('.search-wrapper');
+
+    if (searchInput && searchWrapper) {
+        searchInput.addEventListener('input', function() {
+            if (this.value.trim().length > 0) {
+                searchWrapper.classList.add('has-text');
+            } else {
+                searchWrapper.classList.remove('has-text');
+            }
+        });
+
+        // Khi focus hoặc blur cũng kiểm tra
+        searchInput.addEventListener('focus', function() {
+            if (this.value.trim().length > 0) {
+                searchWrapper.classList.add('has-text');
+            }
+        });
+
+        searchInput.addEventListener('blur', function() {
+            if (this.value.trim().length === 0) {
+                searchWrapper.classList.remove('has-text');
+            }
+        });
+    }
+</script>
+</body>
+</html>

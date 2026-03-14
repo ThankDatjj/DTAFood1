@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đối tác - DTAFood</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00C9B0;
+            --primary-dark: #00a68f;
+            --text: #222;
+            --gray: #555;
+            --light: #f8f9fa;
+        }
+
+        .partner-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .partner-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .partner-hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .partner-hero .btn-partner {
+            background: var(--primary);
+            color: white;
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .partner-hero .btn-partner:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 201, 176, 0.4);
+        }
+
+        .partner-section {
+            padding: 90px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.4s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-12px);
+        }
+        .benefit-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        .benefit-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .step-card {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: relative;
+            text-align: center;
+        }
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .step-card h3 {
+            margin: 40px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .success-stories {
+            background: var(--light);
+            padding: 90px 0;
+            text-align: center;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+        .story-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .story-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        .story-author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .cta-final h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+        .cta-final p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .cta-btn {
+            background: white;
+            color: var(--primary);
+            padding: 18px 60px;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (giữ nguyên như trang chính) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-text">DTAFood</span></div>
+            <ul class="nav-menu">
+                <li><a href="/html/index.html">Trang chủ</a></li>
+                <li><a href="/html/menu.html">Thực đơn</a></li>
+                <li><a href="/html/partner.html">Đối tác</a></li>
+                <li><a href="/html/support.html">Trung tâm hỗ trợ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#" class="btn-partner">Trở thành Đối tác</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Đối tác -->
+    <section class="partner-hero">
+        <div class="container">
+            <h1>Trở thành đối tác của DTAFood</h1>
+            <p>Hợp tác cùng chúng tôi để mở rộng kinh doanh, tiếp cận hàng trăm nghìn khách hàng mỗi ngày và tăng trưởng doanh thu bền vững.</p>
+            <a href="#" class="btn-partner">Đăng ký ngay hôm nay</a>
+        </div>
+    </section>
+
+    <!-- Lợi ích khi trở thành đối tác -->
+    <section class="partner-section">
+        <div class="container">
+            <h2 class="section-title">Lợi ích khi hợp tác cùng DTAFood</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                    <h3>Tiếp cận khách hàng lớn</h3>
+                    <p>Hàng trăm nghìn người dùng hoạt động mỗi ngày trên nền tảng, giúp quán của bạn được biết đến rộng rãi.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Tăng trưởng doanh thu</h3>
+                    <p>Nhiều đối tác ghi nhận doanh thu tăng 30-80% sau khi tham gia nền tảng.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Giao hàng không lo</h3>
+                    <p>Hệ thống tài xế chuyên nghiệp, giao nhanh, bạn chỉ cần tập trung vào chất lượng món ăn.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-percentage"></i></div>
+                    <h3>Khuyến mãi & Quảng cáo</h3>
+                    <p>Tham gia flash sale, voucher, quảng cáo nổi bật để tăng đơn hàng nhanh chóng.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Hỗ trợ 24/7</h3>
+                    <p>Đội ngũ hỗ trợ đối tác luôn sẵn sàng giúp bạn giải quyết mọi vấn đề.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Thanh toán nhanh chóng</h3>
+                    <p>Doanh thu được chuyển khoản định kỳ, minh bạch, không giữ tiền lâu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quy trình tham gia -->
+    <section class="partner-section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Quy trình trở thành đối tác chỉ 3 bước</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Đăng ký thông tin</h3>
+                    <p>Điền thông tin quán ăn, địa chỉ, loại hình kinh doanh và giấy tờ cần thiết.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Kiểm duyệt & Ký hợp đồng</h3>
+                    <p>Đội ngũ DTAFood kiểm tra chất lượng và ký hợp đồng hợp tác trong 3-7 ngày.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Bắt đầu bán hàng</h3>
+                    <p>Đưa thực đơn lên nền tảng, nhận đơn hàng và tăng trưởng doanh thu ngay lập tức.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Câu chuyện thành công -->
+    <section class="partner-section">
+        <div class="container">
+            <h2 class="section-title">Câu chuyện thành công từ đối tác</h2>
+            <div class="story-grid">
+                <div class="story-card">
+                    <div class="story-quote">
+                        "Từ khi hợp tác với DTAFood, doanh thu quán tăng gấp 3 lần chỉ trong 4 tháng. Khách hàng mới rất nhiều, đặc biệt vào giờ cao điểm."
+                    </div>
+                    <div class="story-author">Chị Lan – Quán Phở 68, Hà Nội</div>
+                </div>
+                <div class="story-card">
+                    <div class="story-quote">
+                        "DTAFood giúp quán nhỏ của tôi tiếp cận được hàng nghìn khách hàng. Hệ thống giao hàng nhanh, hỗ trợ tận tình, rất đáng tin cậy."
+                    </div>
+                    <div class="story-author">Anh Minh – Cơm Tấm Sài Gòn, TP.HCM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lời kêu gọi hành động cuối -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Bạn đã sẵn sàng tăng trưởng cùng DTAFood?</h2>
+            <p>Hàng nghìn nhà hàng đang phát triển mạnh mẽ nhờ hợp tác với chúng tôi. Đừng bỏ lỡ cơ hội đưa thương hiệu của bạn đến gần hơn với khách hàng.</p>
+            <a href="#" class="cta-btn">Đăng ký trở thành đối tác ngay</a>
+        </div>
+    </section>
+
+<!-- FOOTER ĐẦY ĐỦ -->
+    <footer class="main-footer">
+        <div class="container">
+        <h2 class="section-title">Liên hệ & Hỗ trợ 24/7</h2>
+        
+        <div class="contact-grid">
+            <!-- Hotline -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-volume"></i>
+                </div>
+                <h4>Hotline</h4>
+                <p class="contact-value">
+                    <a href="tel:1900636636">1900 636 636</a>
+                </p>
+                <span class="contact-label">Gọi ngay để được hỗ trợ</span>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4>Email</h4>
+                <p class="contact-value">
+                    <a href="mailto:support@dtafood.vn">support@dtafood.vn</a>
+                </p>
+                <span class="contact-label">Phản hồi trong 24h</span>
+            </div>
+
+            <!-- Zalo OA -->
+            <div class="contact-item">
+                <div class="contact-icon zalo-icon">
+                    <!-- Dùng hình ảnh thay vì font icon vì FA không có Zalo -->
+                    <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" width="48" height="48">
+                </div>
+                <h4>Zalo OA</h4>
+                <p class="contact-value">
+                    <a href="https://zalo.me/..." target="_blank">DTAFood Official</a>
+                </p>
+                <span class="contact-label">Chat trực tiếp nhanh chóng</span>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="footer-grid" style="padding-top: 30px;">
+                <div style="color: rgb(255, 255, 255);">
+                    <h3>DTAFood</h3>
+                    <p>Nền tảng giao đồ ăn nhanh nhất Việt Nam</p>
+                </div>
+                <div>
+                    <h4>Về chúng tôi</h4>
+                    <a href="#">Giới thiệu</a><br>
+                    <a href="#">Blog</a><br>
+                    <a href="#">Tuyển dụng</a>
+                </div>
+                <div>
+                    <h4>Dành cho đối tác</h4>
+                    <a href="#">Trở thành nhà hàng</a><br>
+                    <a href="#">Trở thành tài xế</a>
+                </div>
+                <div>
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a><br>
+                    <a href="#">Chính sách hoàn tiền</a><br>
+                    <a href="#">Điều khoản sử dụng</a>
+                </div>
+                <div>
+                    <h4>Theo dõi chúng tôi</h4>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a><br>
+                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 DTAFood - Dự án trang web bán hàng DTA| All rights reserved</p>
+                <p>Giấy phép kinh doanh: 0101234567 do Sở Kế hoạch & Đầu tư Hà Nội cấp</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>  
